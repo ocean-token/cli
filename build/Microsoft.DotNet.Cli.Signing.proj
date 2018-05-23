@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project InitialTargets="SetSigningProperties" DefaultTargets="SignFiles" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
-  <Import Project="$(MSBuildThisFileDirectory)/signing/MicroBuild.Core.props" />
+  <Import Project="$(MSBuildThisFileDirectory)/signing/MicroBuild.props" />
+  <Import Project="$(MicroBuildPropsAndTargetsPath)MicroBuild.Core.props" />
+
+  <ItemGroup>
+    <PackageReference Include="MicroBuild.Core" Version="$(MicroBuildCorePackageVersion)" />
+  </ItemGroup>
 
   <!-- This will be overridden if we're building with MicroBuild. -->
   <Target Name="SignFiles">
@@ -116,5 +121,5 @@
     </ItemGroup>
   </Target>
 
-  <Import Project="$(MSBuildThisFileDirectory)/signing/MicroBuild.Core.targets" />
+  <Import Project="$(MicroBuildPropsAndTargetsPath)MicroBuild.Core.targets" />
 </Project>
