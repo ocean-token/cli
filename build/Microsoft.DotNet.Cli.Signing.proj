@@ -6,7 +6,9 @@
   <Import Project="$(MicroBuildPropsAndTargetsPath)MicroBuild.Core.props" />
 
   <ItemGroup>
-    <PackageReference Include="MicroBuild.Core" Version="$(MicroBuildCorePackageVersion)" />
+    <PackageReference Include="MicroBuild.Core">
+      <Version>$(MicroBuildCorePackageVersion)</Version>
+    </PackageReference>
   </ItemGroup>
 
   <!-- This will be overridden if we're building with MicroBuild. -->
