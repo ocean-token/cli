@@ -4,7 +4,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicroBuild.Core" Version="$(MicroBuildCorePackageVersion)" />
+    <PackageReference Include="MicroBuild.Core">
+      <Version>[$(MicroBuildCorePackageVersion)]</Version>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
